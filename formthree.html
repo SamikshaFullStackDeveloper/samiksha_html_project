@@ -3,84 +3,104 @@
 
 <head>
     <title>Third Page</title>
-</head>
+    <style>
+        .one {
+            background-image: url(./assets/wall_paper.jpg);
+            height: 100vh;
+            width: 97vw;
+            border: solid;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
 
 <body>
     <form action="formtwo.html">
         <fieldset>
-            <!-- Ph number input -->
-            <label for="number"></label>
-            <input type="number" id="Ph number" placeholder="Ph Number" />
-            <br>
-            <br>
-            <!-- Email id input -->
-            <label for="Email id"></label>
-            <input type="Email id" id="Email id" placeholder="Email id" />
-            <br />
-            <br />
-            <!-- Password-- input -->
-            <label for="Password"></label>
-            <input type="Password" id="Password" placeholder="Password" />
-            <br />
-            <br />
-            <!-- DOB input -->
-            <h3> what laptop do you own ?</h3>
-            <!-- checkbox input -->
-            <label for="checkbox">mac</label>
-            <input type="checkbox" id="checkbox" />
-            <!-- checkbox input -->
-            <label for="checkbox">android</label>
-            <input type="checkbox" id="checkbox" />
-            <!-- checkbox input -->
-            <label for="checkbox">linux</label>
-            <input type="checkbox" id="checkbox" />
-            <!-- checkbox input -->
-            <label for="checkbox">window</label>
-            <input type="checkbox" id="checkbox" />
-            <h2>Select Your Education</h2>
-            <!-- Radio input -->
-            <input type="radio" id="ed" name="Education" />
-            <label for="radio">schooling</label>
-            <br> <br>
-            <!-- Radio input -->
-            <input type="radio" id="ed" name="Education" />
-            <label for="radio">Jr. college</label>
-            <br> <br>
-            <!-- Radio input -->
-            <input type="radio" id="ed" name="Education" />
-            <label for="radio">Graduation</label>
-            <br> <br>
-            <!-- Radio input -->
-            <input type="radio" id="ed" name="Education" />
-            <label for="radio">PHD</label>
-            <br> <br>
-            <!-- Radio input -->
-            <input type="radio" id="ed" name="Education" />
-            <label for="radio">Post Graduation</label>
-            <br />
-            <br />
-            <!-- select -->
-            <select>
-                <optgroup lable="Jr.Batch">
-                    <option value="Batch 1">visionary batch</option>
-                    <option value="Batch 2">scholar batch</option>
-                </optgroup>
-                <optgroup lable="Sr.Batch">
-                    <option value="Batch 1">Adventesious Batch</option>
-                    <option value="Batch 2">Proficient Batch</option>
-                </optgroup>
-            </select>
-            <br />
-            <br />
-            <!-- textarea -->
-            <textarea placeholder="Enter your valuable feedback"></textarea>
-            <br />
-            <!-- Submit Button -->
-            <br />
-            <br />
-            <a href="formtwo.html"><button class="button1"> type="button">preview</button></a>
-            <a href="form.html"><button class="button2"> type="button">Submit</button></a>
-        </fieldset>
+            <div class="one">
+                <!-- Ph number input -->
+                <label for="number">Contact Number</label>
+                <input type="number" id="Contact number"/>
+                <br>
+                <br>
+                <!-- Ph number input -->
+                <label for="number">Family Contact Number</label>
+                <input type="number" id="Contact number"/>
+                <br>
+                <br>
+                <!-- Email id input -->
+                <label for="Email id">Email id</label>
+                <input type="Email id" id="Email id"/>
+                <!-- Gender input-->
+                <h3>Gender</h3>
+                <label for="Gender">Male</label>
+                <input type="radio" name="Gender">
+                <br />
+                <label for="Gender">Female</label>
+                <input type="radio" name="Gender">
+                <!-- Technical Knowledge -->
+                <h3>Previous Technical Knoledge</h3>
+                <!-- textarea -->
+                <textarea placeholder="Enter Your Previous Knowledge"></textarea>
+                <br />
+                <h3> what laptop do you own ?</h3>
+                <!-- checkbox input -->
+                <label for="checkbox">mac</label>
+                <input type="checkbox" id="checkbox" />
+                <!-- checkbox input -->
+                <label for="checkbox">android</label>
+                <input type="checkbox" id="checkbox" />
+                <!-- checkbox input -->
+                <label for="checkbox">linux</label>
+                <input type="checkbox" id="checkbox" />
+                <!-- checkbox input -->
+                <label for="checkbox">window</label>
+                <input type="checkbox" id="checkbox" />
+                <h2>Select Your Education</h2>
+                <!-- Radio input -->
+                <input type="radio" id="ed" name="Education" />
+                <label for="radio">schooling</label>
+                <br> 
+                <!-- Radio input -->
+                <input type="radio" id="ed" name="Education" />
+                <label for="radio">Jr. college</label>
+                <br> 
+                <!-- Radio input -->
+                <input type="radio" id="ed" name="Education" />
+                <label for="radio">Graduation</label>
+                <br> 
+                <!-- Radio input -->
+                <input type="radio" id="ed" name="Education" />
+                <label for="radio">PHD</label>
+                <br> 
+                <!-- Radio input -->
+                <input type="radio" id="ed" name="Education" />
+                <label for="radio">Post Graduation</label>
+                <br />
+                <br/>
+                <!-- select -->
+                <select>
+                    <optgroup lable="Jr.Batch">
+                        <option value="Batch 1">visionary batch</option>
+                        <option value="Batch 2">scholar batch</option>
+                    </optgroup>
+                    <optgroup lable="Sr.Batch">
+                        <option value="Batch 1">Adventesious Batch</option>
+                        <option value="Batch 2">Proficient Batch</option>
+                    </optgroup>
+                </select>
+                <br />
+                <br />
+                <!-- Submit Button -->
+                <button class="button1" type="preview" class="signupbtn">preview</button>
+                <br />
+                <br />
+                <button class="button2" type="Submit" class="signupbtn"><a href="formfour.html">Submit</a></button>
+                </button>
+                <br />
+    </form>
+    </div>
+    </fieldset>
     </form>
 </body>
 
