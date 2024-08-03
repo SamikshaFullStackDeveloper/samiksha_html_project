@@ -4,6 +4,9 @@
 <head>
     <title>Layout</title>
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
         body{
             margin: 0;
         }
@@ -48,25 +51,26 @@
     <!-- Table Layout -->
     <!-- First Row -->
     <tr class="header">
-        <th>Home</th>
-        <th>About</th>
-        <th>Project</th>
-        <th>Contacts</th>
+        <th><a href="#home">Home</a></th>
+        <th><a href="#about">About</a></th>
+        <th><a href="#projects">Projects</a></th>
+        <th><a href="#contact">Contact</a></th>
     </tr>
     <!-- Second Row -->
+    <tr id="home">
+        <td class="first-row" colspan="4">
+        </td>
     <tr>
-        <td class="first-row" colspan="4"></td>
-    <tr>
-    <tr>
+    <tr id="about">
         <td class="second-row" colspan="4"></td>
     </tr>
-    <tr>
+    <tr id="projects">
         <td class="third-row" colspan="4"></td>
     </tr>
     <!-- Third Row -->
-    <tfoot>
+    <tfoot id="contact">
         <tr class="footer">
-            <td>Github</td>
+            <td><a href="https://samikshafullstackdeveloper.github.io/samiksha_html_project/">Github</a></td>
             <td>Linkedin</td>
             <td>Instagram</td>
             <td>Skype</td>
