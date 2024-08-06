@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Layout</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        table {
+            width: 100vw
+        }
+
+        .header {
+            background-color: lightseagreen;
+            height: 10vh;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .first-row {
+            background-color: lightsalmon;
+            height: 30vh;
+        }
+
+        .second-row {
+            background-color: lightpink;
+            height: 50vh;
+
+        }
+
+        .third-row {
+            background-color: lightskyblue;
+            height: 50vh;
+        }
+
+        .footer {
+            background-color: lightslategray;
+            height: 10vh;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .one {
+            font-size: 50px;
+            color: black;
+            text-align: center;
+            margin: right 50px;
+        }
+
+        .two {
+            font-size: 40px;
+            color: black;
+            text-align: center;
+        }
+
+        .three {
+            margin: 20px;
+
+        }
+
+        .About {
+            font-size: 30px;
+            text-align: left;
+            color: black;
+            margin-bottom: 40px;
+
+        }
+
+        .four {
+            font-size: 20px;
+        }
+
+        .project {
+            font-size: 30px;
+            text-align: left;
+            margin-bottom: 300px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <!-- Table Layout -->
+        <!-- First Row -->
+        <tr class="header">
+            <th><a href="#home">Home</a></th>
+            <th><a href="#about">About</a></th>
+            <th><a href="#projects">Projects</a></th>
+            <th><a href="#contact">Contact</a></th>
+        </tr>
+        <!-- Second Row -->
+        <tr id="home">
+            <td class="first-row" colspan="4">
+                <h1 class="one">WEL-COME</h1>
+                <h2 class="two"> to my Portfolio</h2>
+            </td>
+        <tr>
+        <tr id="about">
+            <td class="second-row" colspan="4">
+                <div class="three">
+                    <u>
+                        <h2 class="About">ABOUT ME</h2>
+                    </u>
+                    <div class="four">
+                        My self Samiksha Tarase, by working proffesion
+                        <br />
+                        I'm Full Stack Developer.
+                        <br />
+                        <br />
+                        I'm expert in Mobile Development and IOS Development,
+                        <br />
+                        also interested in Front Web Development.
+                        <br />
+                        <br />
+                        With the help of Hyper Text Markup Language (HTML).
+                        <br />
+                        and Cascading Style Sheet (CSS).
+                        <br />
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr id="projects">
+            <td class="third-row" colspan="4">
+                <div class="project">
+                    <b><u>MY PROJECT</u></b>
+                </div>
+                <img src="../assets/images/resume-img.jpg" height="100px" width="100px">
+            </td>
+        </tr>
+        <!-- Third Row -->
+        <tfoot id="contact">
+            <tr class="footer">
+                <td><a href="https://samikshafullstackdeveloper.github.io/samiksha_html_project/">Github</a></td>
+                <td>Linkedin</td>
+                <td>Instagram</td>
+                <td>Skype</td>
+            </tr>
+        </tfoot>
+</body>
+</table>
+
+</html>
