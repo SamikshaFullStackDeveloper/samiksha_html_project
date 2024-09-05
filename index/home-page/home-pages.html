@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Layout</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+        }
+
+        table {
+            width: 100vw
+        }
+
+        /* first-row */
+        /* header */
+        .header {
+            background-color: lightseagreen;
+            height: 10vh;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        /* second-row */
+        .second-row {
+            background-color: lightblue;
+            height: 20vh;
+        }
+
+        /* first-line  */
+        .first-line {
+            font-size: 50px;
+            color: black;
+            text-align: center;
+            margin: right 50px;
+        }
+
+        /* second-line */
+        .second-line {
+            font-size: 40px;
+            color: black;
+            text-align: center;
+        }
+
+        /* third-row */
+        .third-row {
+            background-color: lightpink;
+            height: 30vh;
+            font-size: 20px;
+            text-align: left;
+            padding: 10px;
+        }
+
+        /* forth-row */
+        .forth-row {
+            background-color: lightskyblue;
+            height: 50vh;
+            
+        }
+
+        /* footer */
+        .footer {
+            background-color: lightslategray;
+            height: 10vh;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <!-- Table Layout -->
+        <!-- First Row -->
+        <tr class="header">
+            <th><a href="#home">Home</a></th>
+            <th><a href="#about">About</a></th>
+            <th><a href="#projects">Projects</a></th>
+            <th><a href="#contact">Contact</a></th>
+        </tr>
+        <!-- Second Row -->
+        <tr id="home">
+            <td class="second-row" colspan="4">
+                <h1 class="first-line">WEL-COME TO MY PORTFOLIO</h1>
+            </td>
+        <tr>
+            <!-- Third Row-->
+        <tr id="about">
+            <td class="third-row" colspan="4">
+                <u>
+                    <h3 class="About">ABOUT ME</h3>
+                </u>
+                My self Samiksha Tarase, by working proffesion
+                I'm Full Stack Developer.
+                <br />
+                <br />
+                I'm expert in Mobile Development and IOS Development,
+                also interested in Front Web Development.
+                <br />
+                <br />
+                With the help of Hyper Text Markup Language (HTML).
+                and Cascading Style Sheet (CSS).
+                <br />
+            </td>
+        </tr>
+        <!-- Forth Row -->
+        <tr id="projects">
+            <td class="forth-row" colspan="4">
+                <a href="../resume/resume.html"><img src="../index/assets/images/resume-logo.png" height="150px"
+                        width="150px"></a>
+
+                <a href="../form.html/formone.html"><img src="../index/assets/images/form-logo.png" height="150px"
+                        width="150px"></a>
+
+                <a href="../flex/flex-layout-one.html"><img src="../index/assets/images/flex-image.jpeg" height="140px"
+                        width="140px"></a>
+
+                <a href="../exercise/first.html"><img src="../index/assets/images/movie-logo.jpg" height="140px"
+                        width="140px"></a>
+            </td>
+        </tr>
+        <!-- Footer -->
+        <tfoot id="contact">
+            <tr class="footer">
+                <td><a href="https://samikshafullstackdeveloper.github.io/samiksha_html_project/">Github</a></td>
+                <td>Linkedin</td>
+                <td>Instagram</td>
+                <td>Skype</td>
+            </tr>
+        </tfoot>
+</body>
+</table>
+
+</html>
