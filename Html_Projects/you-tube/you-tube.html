@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Table</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        table {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .first-row {
+            background-color: lightcoral;
+            border-width: 1px;
+            height: 50px;
+            text-align: center;
+            font-size: 30px;
+
+        }
+
+        .footer {
+            background-color: lightcoral;
+            color: lightgreen;
+            font-size: 30px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .right-one {
+            background-color: lightskyblue;
+        }
+
+        .right-two {
+            background-color: lightsalmon;
+        }
+
+        .right-three {
+            background-color: lightslategray;
+        }
+
+        .main-box {
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th class="first-row">ABOUT</th>
+            <th class="first-row">SKILLS</th>
+            <th class="first-row">PERSONAL DETAILS</th>
+            <th class="first-row">ACADEMIC</th>
+            <th class="first-row">VISION</th>
+        </tr>
+        <!-- Second row -->
+        <tr>
+            <td class="main-box" colspan="4" rowspan="4">
+                <video height="500px" controls>
+                    <source src="../assets/videos/6394054-uhd_4096_2048_24fps.mp4">
+                </video>
+            </td>
+            <td class="right-one">
+                <video height="235px" controls>
+                    <source src="../assets/videos/nature.mp4" height="500px" width="500px">
+                </video>
+            </td>
+        </tr>
+        <!-- third row -->
+        <tr>
+            <td class="right-two">
+                <video height="235px" controls>
+                    <source src="../assets/videos/nature.mp4">
+                </video>
+            </td>
+        </tr>
+        <!-- Fourth row -->
+        <tr>
+            <td class="right-three">
+                <video height="235px" controls>
+                    <source src="../assets/videos/nature.mp4">
+                </video>
+            </td>
+            <td></td>
+        </tr>
+        <!-- Table Footer -->
+        <tfoot>
+            <tr class="footer">
+                <td>SUBSCRIBE</td>
+                <td>FOLLOW US</td>
+                <td>LIKE</td>
+                <td>SHARE</td>
+                <td>COMMENT</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>
