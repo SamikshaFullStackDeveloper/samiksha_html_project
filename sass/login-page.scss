@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../assets/images/wall_paper.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+@mixin button($xxxx,$yyyy){
+    width: 100%;
+    padding: 10px;
+    background-color:$xxxx;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $yyyy;
+    }
+    
+}
+.login-btn{
+    @include button(rgb(41, 171, 126),rgb(32, 172, 179));
+}
+.reset-btn{
+    @include button(rgb(173, 202, 230),rgb(255, 182, 182));
+}
+.signupbtn{
+    @include button(rgb(0, 128, 111),rgb(144, 238, 191));
+}
+.form_footer{
+    font-size: 14px;
+}
