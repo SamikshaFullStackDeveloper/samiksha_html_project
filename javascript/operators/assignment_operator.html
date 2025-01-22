@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-container {
+            height: 60vh;
+            width: 30vw;
+            background-color: lightgray;
+            text-align: center;
+            padding: 5%;
+            margin-top: 50px;
+            margin-left: 400px;
+        }
+
+        button {
+            background-color: gray;
+            padding: 10px;
+            border-radius: 10px;
+            width: 90%;
+            height: 10%;
+            font-size: 20px;
+        }
+
+        input {
+            width: 90%;
+            height: 10%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        #demo {
+            width: 92%;
+            height: 20%;
+            padding: 10px;
+            border-radius: 20px;
+            border-color: black;
+            font-size: 20px;
+            background-color: beige;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="demo"></div>
+        <br />
+        <!-- first input -->
+        <label for="number"></label>
+        <input type="number" id="Input-one" placeholder="Enter first number">
+        <br />
+        <br />
+        <!-- second input -->
+        <label for="number"></label>
+        <input type="number" id="Input-two" placeholder="Enter second number">
+        <br />
+        <br />
+        <!-- button -->
+        <button type="button" onclick="Int()">Add</button>
+    </div>
+    <script>
+            function add(){
+                let a = "Hello"
+                let b = "World"
+                let c = (a) + (b)
+                console.log (c);
+                alert(c);
+                document.getElementById("demo").innerHTML=c;
+            }
+        let x = 0
+        function Int(){
+            x += 10
+            document.getElementById("demo").innerHTML=x;
+            alert(c);
+        }
+    </script>
+</body>
+
+</html>

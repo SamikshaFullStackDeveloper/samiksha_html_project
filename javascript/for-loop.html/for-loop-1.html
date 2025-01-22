@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+
+        }
+
+        .container {
+            height: 50%;
+            width: 50%;
+        }
+
+        .display {
+            height: 60%;
+            width: 50%;
+            font: size 20px;
+        }
+
+        button {
+            height: 10%;
+            width: 20%;
+            background-color: green;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>For Loop Javascript</h1>
+        <input type="number" id="input">
+        <button onclick="forloop1()">submit</button>
+        <div class="display" id="display"></div>
+
+    </div>
+    <!-- table -->
+    <script>
+        function forloop() {
+            const num = document.getElementById("input").value
+
+            for (input = 1; input <= 10; input++) {
+                {
+                    console.log(input);
+                    document.getElementById("display").innerHTML += num + "x" + input + " = " + num * input + "<br/>";
+
+                }
+            }
+        }
+    </script>
+
+    <!-- even-odd -->
+    
+    <script>
+        function forloop1() {
+            const num = document.getElementById("input").value
+
+            for (let input = num; input <= 5; input++) {
+                {
+                    console.log(input);
+                    if (input % 2 == 0) {
+                        document.getElementById("display").innerHTML += `${ input } is even  "<br/>"`;
+                    }
+                    else {
+                        document.getElementById("display").innerHTML += `${ input } is odd "<br/>"`;
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- infinite loop -->
+    <!-- <script>
+        for (; ;){ // infinite loop
+            let input = prompt ("Enter a number:");
+            let number = Number(input,10);
+
+            if (number === 0) {
+                console.log("Stopping as 0 was entered.");
+                break;
+            }
+        }
+    </script> -->
+
+    <!-- print number from 100 to 50 -->
+    <script>
+        function forloop2() {
+            const num = document.getElementById("input").value
+
+            for (input = 100; input >= 50; input--) {
+                {
+                    console.log(input);
+                    document.getElementById("display").innerHTML += i + "<br/>"
+
+                }
+            }
+        }
+    </script>
+    <!-- print the sum of number from 1 to 5 -->
+    <script>
+        function forloop3() {
+            let sum = 0;
+            for (i = 1; i <= 5; i++) {
+                sum += i;
+            }
+            console.log(sum);
+            document.getElementById('display').innerHTML = sum
+        }
+    </script>
+
+    <!-- print the factorial of 5 -->
+    <script>
+        function forloop4() {
+            let fact = 1;
+            for (i = 1; i <= 100; i++) {
+                fact *= i;
+            }
+            console.log(fact);
+            document.getElementById('display').innerHTML = fact
+        }
+    </script>
+
+    <!-- print characters of string -->
+ <script>
+        function forloop5(){
+            const str = "hello world";
+            for (i = 0; i < str.length; i++){
+                document.getElementById('display').innerHTML += str[i]+"<br/>";
+            }
+        }
+    </script>
+</body> 
+
+<!-- print a right angle triangle pattern -->
+<script>
+    function forloop6(){
+        const num = document.getElementById("input").value;
+        for (i = 1; i <= num; i++){
+            for ( j = 1; j <= i; j++){
+                document.getElementById('display').innerHTML += "*";
+            }
+            document.getElementById('display').innerHTML += "<br/>";
+        }
+    }
+</script>
+
+
+</html>

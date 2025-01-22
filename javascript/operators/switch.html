@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+    <style>
+        body{
+           margin-left: 400px;
+        }
+        .main-container {
+            height: 60vh;
+            width: 30vw;
+            background-color: lightgray;
+            text-align: center;
+            padding: 5%;
+            margin-top: 50px;
+            margin-left: 500px;
+
+        }
+
+        .box {
+            height: 50vh;
+            width: 25vw;
+            background-color: lightgray;
+            text-align: center;
+            padding: 5%;
+            margin-top: 50px;
+        }
+
+        input {
+            width: 90%;
+            height: 10%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        .button {
+            background-color: lightblue;
+            width: 40%;
+            height: 12%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+
+        }
+
+        #demo {
+            height: 20%;
+            width: 100%;
+            background-color: gray;
+            color: aliceblue;
+            text-align: center;
+            font-size: x-large;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let day;
+        function Switch(a) {
+            switch (a) {
+                case 0:
+                    day = "Sunday";
+                    break;
+                case 1:
+                    day = "Monday";
+                    break;
+                case 2:
+                    day = "Tuesday";
+                    break;
+                case 3:
+                    day = "Wednesday";
+                    break;
+                case 4:
+                    day = "Thursday";
+                    break;
+                case 5:
+                    day = "Friday";
+                    break;
+                case 6:
+                    day = "Saturday";
+                    break;
+            }
+            document.getElementById("demo").innerHTML = "Today is " + day
+        }
+    </script>
+    <div class="container">
+        <div class="box">
+            <div id="demo"></div>
+            <br>
+            <br>
+            <button class="button" onclick="Switch(0)">Sunday</button>
+            <button class="button" onclick="Switch(1)">Monday</button>
+            <button class="button" onclick="Switch(2)">Tuesday</button>
+            <button class="button" onclick="Switch(3)">Wednesday</button>
+            <button class="button" onclick="Switch(4)">Thursday</button>
+            <button class="button" onclick="Switch(5)">Friday</button>
+            <button class="button" onclick="Switch(6)">Saturday</button>
+        </div>
+    </div>
+</body>
+
+</html>

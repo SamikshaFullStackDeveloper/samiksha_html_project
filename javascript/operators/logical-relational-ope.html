@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compare</title>
+    <!-- styling -->
+    <style>
+        /* / container / */
+        .container {
+            background-color: white;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+
+
+        }
+        /* / box / */
+        .box {
+            height: 50vh;
+            width: 25vw;
+            background-color: lightgray;
+            text-align: center;
+            padding: 5%;
+            margin-top: 50px;
+        }
+        /* / input / */
+        input {
+            width: 90%;
+            height: 10%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        /* / button / */
+        .button {
+            background-color: green;
+            width: 40%;
+            height: 10%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        /* / display / */
+        #demo {
+            height: 20%;
+            width: 100%;
+            background-color: #3C3D37;
+            color: aliceblue;
+            text-align: center;
+            font-size: x-large;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- script start -->
+    <script>
+      
+        function compare() {
+            let x = document.getElementById("input-one").value;
+            if ((x % 4 === 0 && x % 100 !== 0) || (x % 400 === 0)) {
+                alert(x + " is a Leap Year.");
+                document.getElementById("demo").innerHTML = x + " is a leap year"
+            } else {
+                alert(x + " is not a Leap Year.");
+                document.getElementById("demo").innerHTML = x + " is not a leap year"
+            }
+
+        }
+    </script>
+    <!-- script end -->
+
+    <!-- container -->
+    <div class="container">
+        <!-- box - second container -->
+        <div class="box">
+            <!-- display -->
+            <div id="demo"></div>
+            <br>
+            <br>
+            <!-- input-one -->
+            <input type="number" id="input-one" placeholder="Enter number">
+          <br>
+          <br>
+           
+            <!-- button for compare -->
+            <button class="button" onclick="compare()">Check</button>
+           
+        </div>
+    </div>
+</body>
+</html>

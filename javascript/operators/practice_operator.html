@@ -1,0 +1,240 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-container{
+            height: 80vh;
+            width: 40vw;
+            background-color: lightgray;
+            text-align: center;
+            padding: 5%;
+            margin-top: 50px;
+            margin-left: 400px;
+        }
+        
+        #display_box{
+            width: 92%;
+            height: 20%;
+            padding: 10px;
+            border-radius: 20px;
+            border-color: black;
+            font-size: 20px;
+            background-color: beige;
+        }
+        input {
+            width: 70%;
+            height: 10%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-top: 40px;
+        }
+        button{
+            background-color: gray;
+            padding: 10px;
+            border-radius: 10px;
+            width: 60%;
+            height: 10%;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+   <script>
+    function evenOdd() {
+        // input
+        const x = document.getElementById("first-number").value;
+       
+        // processing
+        let  y = x % 2 == 0 ? "EVEN" : "ODD";
+
+        // output
+        document.getElementById("display_box").innerHTML=y;
+    }
+</script>
+</head>
+<body>
+    <div class="main-container">
+       
+        result-->
+        <!-- <div id="display_box" placeholder="result"></div>
+        <br/>
+        <br/> -->
+        <!-- second input -->
+        <!-- <label for="text"></label>
+        <input type="text" id="first-number" placeholder="Enter first number">
+        <br/>
+        <button type="button" onclick="evenOdd()">even/odd</button>
+
+    </div> -->
+<!--     
+</body>
+</html>
+ -->
+
+   <!-- program 2 -->
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-container{
+            height: 80vh;
+            width: 40vw;
+            background-color: lightgray;
+            text-align: center;
+            padding: 5%;
+            margin-top: 50px;
+            margin-left: 400px;
+        }
+      
+        #display_box{
+            width: 92%;
+            height: 20%;
+            padding: 10px;
+            border-radius: 20px;
+            border-color: black;
+            font-size: 20px;
+            background-color: beige;
+        }
+        input {
+            width: 70%;
+            height: 10%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-top: 40px;
+        }
+        button{
+            background-color: gray;
+            padding: 10px;
+            border-radius: 10px;
+            width: 60%;
+            height: 10%;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+   <script>
+    function vote() {
+        // input
+        const x = document.getElementById("first-number").value;
+
+        // processing
+        let  y = x>=18  ? "Elligible" : "notElligible";
+        console.log(y);
+        alert(y)
+
+        // output
+        document.getElementById("display_box").innerHTML=y;
+    }
+</script>
+</head>
+<body>
+    <div class="main-container">
+       
+
+        <!-- result-->
+        <!-- <div id="display_box" placeholder="result"></div>
+        <br/>
+        <br/> -->
+        <!-- second input -->
+        <!-- <label for="text"></label>
+        <input type="number" id="first-number" placeholder="Enter your age">
+        <br/>
+        <button type="button" onclick="vote()">elligible/notElligible</button>
+
+    </div>
+    
+</body>
+</html>  -->
+
+
+
+<!-- program 3 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-container{
+            height: 80vh;
+            width: 40vw;
+            background-color: lightgray;
+            text-align: center;
+            padding: 5%;
+            margin-top: 50px;
+            margin-left: 400px;
+        }
+      
+        #display_box{
+            width: 92%;
+            height: 20%;
+            padding: 10px;
+            border-radius: 20px;
+            border-color: black;
+            font-size: 20px;
+            background-color: beige;
+        }
+        input {
+            width: 70%;
+            height: 10%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-top: 40px;
+        }
+        button{
+            background-color: gray;
+            padding: 10px;
+            border-radius: 10px;
+            width: 60%;
+            height: 10%;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+   <script>
+    function greater() {
+        // input
+        const x = document.getElementById("first-number").value;
+        const y = document.getElementById("second-number").value;
+
+        // processing
+        let  z = x > y ? "greater than" : "less than";
+        console.log(z);
+        alert(z)
+
+        // output
+        document.getElementById("display_box").innerHTML=z
+               ;
+    }
+</script>
+</head>
+<body>
+    <div class="main-container">
+       
+
+        <!-- result-->
+        <div id="display_box" placeholder="result"></div>
+        <br/>
+        <br/> 
+      <!-- second input -->
+     <label for="text"></label>
+        <input type="number" id="first-number" placeholder="Enter first number">
+        <br/>
+        <input type="number" id="second-number" placeholder="Enter second number">
+        <button type="button" onclick="greater()">greater than / less than</button>
+
+    </div>
+    
+</body>
+</html>  

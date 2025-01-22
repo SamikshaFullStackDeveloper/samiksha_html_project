@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-container {
+            height: 100vh;
+            width: 30vw;
+            background-color: lightgray;
+            text-align: center;
+            padding: 5%;
+            margin-top: 20px;
+            margin-left: 400px;
+        }
+
+        button {
+            background-color: gray;
+            padding: 10px;
+            border-radius: 5px;
+            width: 90%;
+            height: 5%;
+            font-size: 20px;
+        }
+
+        input {
+            width: 90%;
+            height: 3%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        #demo {
+            width: 92%;
+            height: 7%;
+            padding: 10px;
+            border-radius: 20px;
+            border-color: black;
+            font-size: 20px;
+            background-color: beige;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- 1st -->
+        <div id="demo"></div>
+        <br />
+        <!-- first input -->
+        <label for="number"></label>
+        <input type="number" id="Input-one" placeholder="Enter first string">
+        <br />
+        <br />
+        <!-- second input -->
+        <label for="number"></label>
+        <input type="number" id="Input-two" placeholder="Enter second string">
+        <br />
+        <br />
+        <!-- button -->
+        <button type="button" onclick="string1()"> “Abc” + “def”</button>
+        <br />
+        <br /><hr>
+        <!-- 2nd -->
+        <div id="demo"></div>
+        <br />
+        <!-- first input -->
+        <label for="number"></label>
+        <input type="number" id="Input-one" placeholder="Enter first string">
+        <br />
+        <br />
+        <!-- second input -->
+        <label for="number"></label>
+        <input type="number" id="Input-two" placeholder="Enter second string">
+        <br />
+        <br />
+        <!-- button -->
+        <button type="button" onclick="string2()">"10"+10</button>
+        <br />
+        <br /><hr>
+        <!-- 3rd -->
+        <div id="demo"></div>
+        <br />
+        <!-- first input -->
+        <label for="number"></label>
+        <input type="number" id="Input-one" placeholder="Enter first string">
+        <br />
+        <br />
+        <!-- second input -->
+        <label for="number"></label>
+        <input type="number" id="Input-two" placeholder="Enter second string">
+        <br />
+        <br />
+        <!-- button -->
+        <button type="button" onclick="string3()">"ABC"==abc"</button>
+
+    </div>
+    <script>
+        function string1(){
+       let a=document.getElementById("Input-one").value;
+       let b=document.getElementById("Input-two").value;
+       let c= Number (a) + Number (b);
+       alert(c);
+       document.getElementById("demo").innerHTML=c; 
+    }
+    function string2(){
+       let a=document.getElementById("Input-one").value;
+       let b=document.getElementById("Input-two").value;
+       let c= a + Number(b);
+       alert(c);
+       document.getElementById("demo").innerHTML=c; 
+    }
+    function string3(){
+       let a=document.getElementById("Input-one").value;
+       let b=document.getElementById("Input-two").value;
+       let c= a == b;
+       alert(c);
+       document.getElementById("demo").innerHTML=c; 
+    }
+
+    </script>
+
+
+</body>
+
+</html>
