@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Internal Styling -->
+    <style>
+          
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+          /* Body */
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 50px;
+            z-index: 1000;
+        }
+
+        .file-name {
+            color: #EDDFE0;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar {
+            font-size: 1.2rem;
+            color: #EDDFE0;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .navbar:hover {
+            color: rgba(110, 87, 224, 0.9);
+           
+        }
+
+        /* Responsive Navbar */
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 800px;
+            padding-top: 80px;
+            background: linear-gradient(135deg, #f8f9fa, #ddd);
+        }
+
+        .hero-text h3 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .hero-text h2 {
+            font-size: 3rem;
+            color: rgba(110, 87, 224);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #555;
+
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            background: rgba(110, 87, 224);
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: rgba(110, 87, 224, 0.8);
+            box-shadow: 0 0 10px rgba(110, 87, 224, 0.8);
+        }
+
+        .profile-img {
+            height: 350px;
+            width: 350px;
+            border-radius: 50%;
+            border: 5px solid rgba(110, 87, 224);
+        }
+
+        /* About Section */
+        .about {
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 80px 20px;
+            text-align: center;
+            height: 800px;
+
+
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: rgba(110, 87, 224);
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            height: 800px;
+        }
+
+        .projects h2 {
+            font-size: 2.5rem;
+            color: rgba(110, 87, 224);
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-rows: 1fr, ;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            height: 300px;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+           /* Contact Section  */
+        .contact {
+            background: #eee;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+      .contact h2 {
+            font-size: 2.5rem;
+            color: rgba(110, 87, 224);
+        }
+
+         .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background: rgba(110, 87, 224);
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: rgba(110, 87, 224, 0.8);
+        } 
+         
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: black;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <a class="file-name">Portfolio</a>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-links">
+            <a class="navbar" href="#home">Home</a>
+            <a class="navbar" href="#about">About</a>
+            <a class="navbar" href="#projects">Projects</a>
+            <a class="navbar" href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h3>Hello, I'm</h3>
+            <h2>Samiksha Tarase</h2>
+            <p>I'm a passionate Full Stack Developer who loves creating interactive web applications.</p><br />
+            <button class="btn"><a href="../Html_Projects/resume/">Download CV</a></button>
+           
+        </div>
+        <div>
+            <img class="profile-img" src="../Html_Projects/assets/images/logo-img.png" alt="Profile Image">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Me</h2><br />
+        <br/>
+        <p>
+            I am a passionate Full Stack Developer with a strong foundation in both front-end and back-end
+            technologies. My expertise lies in crafting responsive and user-friendly applications that enhance
+            the user experience. I thrive in collaborative environments where I can leverage my problem-solving
+            skills and creativity to bring innovative solutions to life.
+        </p>
+    </section>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <a href="../Portfolio/html-page.html">
+        <div class="project-container">
+            <div class="project-card">
+                <h3>HTML/CSS</h3>
+            </div>
+        </a> 
+
+        <a href="/">
+            <div class="project-card">
+                <h3>Javascript</h3>
+            </div>
+        </a>
+
+            <div class="project-card">
+                <h3>Bootstrap</h3>
+            </div>
+
+            <div class="project-card">
+                <h3>ReactJs</h3>
+            </div>
+
+            <div class="project-card">
+                <h3>Test Cases</h3>
+            </div>
+        </div>
+    </section>
+
+       <!-- Contact Section -->
+       <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="4" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+   
+</body>
+
+</html>
