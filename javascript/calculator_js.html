@@ -10,106 +10,68 @@
     #result {
       color: black;
       font-size: 15px;
-      align-items: right;
+      text-align: right;
     }
   </style>
 </head>
 
 <body>
   <div class="calculator">
-    <textarea name="" id="result" cols="30" rows="10"></textarea>
+    <textarea id="result" cols="30" rows="2" readonly></textarea>
     <table>
       <tr>
-        <th colspan="4" height="20%"></th>
-      </tr>
-      <tr>
-        <th><button class="btn" onclick="clearDisplay('AC')">AC</button></th>
-        <th><button class="btn" onclick="appendToResult('DEL')">DEL</button></th>
-        <th><button class="btn" onclick="percent()">%</button></th>
-        <th><button class="btn" onclick="div('/')">/</button></th>
+        <th><button class="btn" onclick="clearDisplay()">AC</button></th>
+        <th><button class="btn" onclick="deleteLast()">DEL</button></th>
+        <th><button class="btn" onclick="appendToResult('%')">%</button></th>
+        <th><button class="btn" onclick="appendToResult('/')">/</button></th>
       </tr>
       <tr>
         <td><button onclick="appendToResult('7')">7</button></td>
         <td><button onclick="appendToResult('8')">8</button></td>
         <td><button onclick="appendToResult('9')">9</button></td>
-        <td><button class="btn" onclick="multi('*')">*</button></td>
+        <td><button class="btn" onclick="appendToResult('*')">*</button></td>
       </tr>
       <tr>
         <td><button onclick="appendToResult('4')">4</button></td>
         <td><button onclick="appendToResult('5')">5</button></td>
         <td><button onclick="appendToResult('6')">6</button></td>
-        <td><button class="btn" onclick="subtract('-')">-</button></td>
+        <td><button class="btn" onclick="appendToResult('-')">-</button></td>
       </tr>
       <tr>
         <td><button onclick="appendToResult('1')">1</button></td>
         <td><button onclick="appendToResult('2')">2</button></td>
         <td><button onclick="appendToResult('3')">3</button></td>
-        <td><button class="btn" onclick="add('+')">+</button></td>
+        <td><button class="btn" onclick="appendToResult('+')">+</button></td>
       </tr>
       <tr>
-        <td colspan="2"> <button onclick="appendToResult('0')">0</button></td>
-        <td><button onclick="appendToResult()">.</button></td>
-        <td><button class="btn" onclick="show('=')">=</button></td>
+        <td colspan="2"><button onclick="appendToResult('0')">0</button></td>
+        <td><button onclick="appendToResult('.')">.</button></td>
+        <td><button class="btn" onclick="calculate()">=</button></td>
       </tr>
     </table>
     <script>
-      let displayString = "";
-      action = 0;
-      total = 0;
-
       function clearDisplay() {
-        document.getElementById('display').value = "";
+        document.getElementById('result').value = "";
       }
 
-      function appendToResult(passnumber) {
-        displayString +=passnumber;
-        // displayString = displayString + passnumber.toString();
-        document.getElementById("result").value += passnumber;
-
-      }
-      function add() {
-        total = Number(displayString);
-        displayString = "";
-        action = 1;
-        document.getElementById("result").value += displayString
+      function deleteLast() {
+        let result = document.getElementById("result").value;
+        document.getElementById("result").value = result.slice(0, -1);
       }
 
-      function sub() {
-        total = Number(displayString);
-        displayString = "";
-        action = 2;
-        document.getElementById("result").value += displayString
+      function appendToResult(value) {
+        document.getElementById("result").value += value;
       }
 
-      function multi() {
-        total = Number(displayString);
-        displayString = "";
-        action = 3;
-        document.getElementById("result").value += displayString
-      }
-      function div() {
-        total = Number(displayString);
-        displayString = "";
-        action = 4;
-        document.getElementById("result").value += displayString
-      }
-      function show() {
-        if (action == 1) {
-          total = total + Number(displayString);
-        } else if (action == 2) {
-          total = total - Number(displayString);
-        } else if (action == 3) {
-          total = total * Number(displayString);
-        } else if (action == 4) {
-          total = total / Number(displayString);
+      function calculate() {
+        try {
+          document.getElementById("result").value = eval(document.getElementById("result").value);
+        } catch (e) {
+          document.getElementById("result").value = "Error";
         }
-
-        displayString = total.toString();
-        document.getElementById('result').value = displayString;
-        document.getElementById("result").innerHTML = total;
       }
-
     </script>
+  </div>
 </body>
 
 </html>

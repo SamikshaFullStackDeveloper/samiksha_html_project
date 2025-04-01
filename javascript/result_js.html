@@ -1,111 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result</title>
+    <title>Number Comparison</title>
     <style>
-        .main-container {
-            background-color: white;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: url('https://source.unsplash.com/1600x900/?numbers,math') no-repeat center center/cover;
             height: 100vh;
-            width: 100vw;
             display: flex;
             justify-content: center;
-
-
+            align-items: center;
         }
-
         .container {
-            height: 60vh;
-            width: 30vw;
-            background-color: lightgray;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
             text-align: center;
-            padding: 5%;
-            margin-top: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 350px;
         }
-
+        h1 {
+            margin-bottom: 20px;
+            color: rgba(0, 0, 0, 0.755);
+        }
         input {
-            width: 90%;
-            height: 10%;
+            width: 100%;
             padding: 10px;
-            border-radius: 10px;
-            font-size: 20px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 18px;
         }
-
         button {
-            background-color: green;
-            width: 90%;
-            height: 10%;
-            padding: 10px;
-            border-radius: 10px;
+            width: 100%;
+            padding: 12px;
+            background: #388e3c;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #2e7d32;
+        }
+        #result {
+            margin-top: 20px;
             font-size: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
-
 <body>
-    <!-- main-container -->
-    <div class="main-container">
-        <div class="container">
-            <div class="display">
-                <h1 id="demo">Result</h1>
-            </div>
-            <!-- first input -->
-
-            <input type="text" id="first-number" placeholder="Enter first number">
-            <br />
-            <br />
-            <!-- second input -->
-
-            <input type="number" id="second-number" placeholder="Enter second number">
-            <br />
-            <br />
-            <!-- Button -->
-            <button type="button" onclick="compare()">Compare</button>
-        </div>
+    <div class="container">
+        <h1>Number Comparison</h1>
+        <input type="number" id="first-number" placeholder="Enter first number">
+        <input type="number" id="second-number" placeholder="Enter second number">
+        <button onclick="compareNumbers()">Compare</button>
+        <p id="result"></p>
     </div>
-    <!-- <script>
 
-        function compare() {
-            let x = document.getElementById("first-number").value
-            let y = document.getElementById("second-number").value
+    <script>
+        function compareNumbers() {
+            let firstNum = Number(document.getElementById("first-number").value);
+            let secondNum = Number(document.getElementById("second-number").value);
+            let result = document.getElementById("result");
 
-            if (x > y) {
-                document.getElementById("demo").innerHTML = 'X is Greater'+ ":"+y
-             }
-            else {
-                document.getElementById("demo").innerHTML = 'Y is Greater'+":"+x
+            if (isNaN(firstNum) || isNaN(secondNum)) {
+                result.innerHTML = "❌ Please enter valid numbers";
+                result.style.color = "red";
+                return;
             }
+            
+            let difference = firstNum - secondNum;
+            result.innerHTML = `Difference: ${difference}`;
+            result.style.color = "teal";
         }
-    </script> -->
-<!--    
-   <script>
-        function compare() {
-            let x = document.getElementById("first-number").value
-            let y = document.getElementById("second-number").value
-
-            if (x == y) {
-                document.getElementById("demo").innerHTML = 'x==y'
-            }
-            else {
-                document.getElementById("demo").innerHTML = 'x!=y'
-            }
-        }
-  </script> -->
-
-
-<script>
-    function compare() {
-        let x = Number(document.getElementById("first-number").value) 
-        let y = Number(document.getElementById("second-number").value)
-     
-        x -= y
-        let z = x 
-        document.getElementById("demo").innerHTML = z
-    }
-</script>
-
+    </script>
 </body>
-
 </html>

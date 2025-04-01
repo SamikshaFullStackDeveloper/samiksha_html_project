@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('https://static.vecteezy.com/system/resources/thumbnails/030/935/152/small_2x/futuristic-and-clean-stage-blank-center-background-loop-ai-generated-free-video.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #quiz {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .options-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .option-button {
+            padding: 15px;
+            font-size: 18px;
+            background: #001f3f;
+            color: white;
+            border: 2px solid #00aaff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .option-button:hover {
+            background: #00aaff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kaun Banega Crorepati ?</h1>
+    <div id="quiz"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "Bharat ka rashtriya pakshi kaun sa hai?",
+                options: ["A: Mor", "B: Koyal", "C: Kabootar", "D: Baaz"],
+                answer: 0
+            },
+            {
+                question: "Kaun Banega Crorepati kisne host kiya hai?",
+                options: ["A: Shah Rukh Khan", "B: Amitabh Bachchan", "C: Salman Khan", "D: Anil Kapoor"],
+                answer: 1
+            },
+            {
+                question: "Taj Mahal kahan sthit hai?",
+                options: ["A: Delhi", "B: Agra", "C: Jaipur", "D: Mumbai"],
+                answer: 1
+            },
+            {
+                question: "Bharat ka sabse bada rajya kaun sa hai?",
+                options: ["A: Maharashtra", "B: Uttar Pradesh", "C: Rajasthan", "D: Madhya Pradesh"],
+                answer: 2
+            },
+            {
+                question: "Olympic khel kitne varsh me ek baar hote hain?",
+                options: ["A: 2 varsh", "B: 3 varsh", "C: 4 varsh", "D: 5 varsh"],
+                answer: 2
+            },
+            {
+                question: "Bharat ke pratham pradhan mantri kaun the?",
+                options: ["A: Mahatma Gandhi", "B: Jawaharlal Nehru", "C: Sardar Patel", "D: Rajendra Prasad"],
+                answer: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        function showQuestion() {
+            const quizContainer = document.getElementById("quiz");
+            quizContainer.innerHTML = "";
+
+            const q = document.createElement("h2");
+            q.textContent = questions[currentQuestion].question;
+            quizContainer.appendChild(q);
+
+            const optionsDiv = document.createElement("div");
+            optionsDiv.classList.add("options-container");
+            
+            questions[currentQuestion].options.forEach((option, index) => {
+                const btn = document.createElement("button");
+                btn.textContent = option;
+                btn.classList.add("option-button");
+                btn.onclick = () => checkAnswer(index);
+                optionsDiv.appendChild(btn);
+            });
+            
+            quizContainer.appendChild(optionsDiv);
+        }
+
+        function checkAnswer(selectedIndex) {
+            if (selectedIndex === questions[currentQuestion].answer) {
+                alert("Sahi jawab!");
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    alert("Mubarak ho! Aapne sabhi prashno ka sahi uttar diya.");
+                }
+            } else {
+                alert("Galat jawab. Koshish jaari rakhein!");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", showQuestion);
+    </script>
+</body>
+</html>
