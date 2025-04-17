@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <!-- CSS -->
+    <style>
+        /* Main Container */
+        .main-container {
+            height: 90vh;
+            width: 90vw;
+            background-color: antiquewhite;
+            display: grid;
+        }
+
+        /* First Row */
+        .first-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            border-style: solid;
+        }
+
+        /* Second Row */
+        .second-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-style: solid;
+        }
+
+        /* Box */
+        .box {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+        <div class="first-row"></div>
+        <div class="second-row">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="third-row"></div>
+    </div>
+</body>
+
+</html>

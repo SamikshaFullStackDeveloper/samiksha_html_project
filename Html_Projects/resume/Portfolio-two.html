@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            scroll-behavior: smooth;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-container {
+            width: 100vw;
+            min-height: 100vh;
+            background-color: #fff;
+        }
+
+        /* Header Styling */
+        .header {
+            width: 100%;
+            background-color: black;
+            font-size: 30px;
+            text-align: right;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 15px 0;
+            z-index: 1000;
+        }
+ 
+        .file-name {
+            color: #EDDFE0;
+            font-size: 35px;
+            text-align: center;
+            margin-right: 600px;
+        }
+
+        .navbar {
+            font-size: 25px;
+            color: #EDDFE0;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+
+        .navbar:hover {
+            color: rgba(110, 87,224);
+        }
+
+        /* Hero Section */
+        .second-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            padding-top: 80px;
+        }
+
+        .second-row h3
+        {
+            color: black;
+            margin-left: 50px;
+            font-size: 30px;
+        }
+
+        .second-row h2 {
+            color: rgba(110, 87,224);
+            font-size: 40px;
+        }
+
+        .second-row p {
+            font-size: 20px;
+            color: #EDDFE0;
+            margin-left: 50px;
+            max-width: 600px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            background-color: rgba(110, 87,224);
+            border-radius: 2rem;
+            margin-left: 50px;
+            border: none;
+            cursor: pointer;
+        }
+
+     button a {
+            color: aquamarine;
+            text-decoration: none; 
+        } 
+
+        button:hover {
+            box-shadow: 0 0 10px rgba(110, 87,224);
+        }
+
+        .profile-logo {
+            height: 350px;
+            width: 350px;
+        }
+
+        /* About Section */
+        .forth-row {
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            text-align: center;
+        }
+
+        .about-container h4 {
+            color: #000;
+            font-size: 25px;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+      
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+    <div class="header">
+            <a class="file-name">Portfolio</a>
+            <a class="navbar" href="#Home">Home</a>
+            <a class="navbar" href="#About">About</a>
+            <a class="navbar" href="#Project">Project</a>
+            <a class="navbar" href="#Contact">Contact</a>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="second-container" id="Home">
+            <div class="second-row">
+                <h3>Hello, I'am</h3>
+                <h2>Developer</h2>
+                <p style="color:#000"> My name is Samiksha Tarase! I'm a Full Stack Developer.</p>
+                <button><a href="resume-one.html" class="CV-button">Download CV</a></button>
+            </div>
+            <div>
+                <img class="profile-logo" src="../assets/images/logo-img.png" alt="Profile Image">
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="forth-row" id="About">
+            <div class="about-container">
+                <h4>About Me</h4>
+                <h4>
+                    I am a passionate Full Stack Developer with a strong foundation in both front-end and back-end
+                    technologies.<br/> My expertise lies in crafting responsive and user-friendly applications that enhance
+                    the user experience. <br/>I thrive in collaborative environments where I can leverage my problem-solving
+                    skills and creativity to bring innovative solutions to life.
+                </h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html> 
+
+
+
