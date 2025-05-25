@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasant Industries - High Performance Concrete Admixtures</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --dark-color: #1f2937;
+            --light-gray: #f8fafc;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-color) !important;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .btn-primary:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-outline-light {
+            border: 2px solid white;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            height: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .product-card h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .product-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-specs {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-specs li {
+            padding: 5px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .product-specs li::before {
+            content: '✓';
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--accent-color), #d97706);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .feature-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .feature-item h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+        }
+
+        /* Calculator Section */
+        .calculator {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .calculator-form {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control {
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+        }
+
+        .form-select {
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 12px 15px;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            display: none;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--dark-color);
+            color: white;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            height: 100%;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-right: 1rem;
+            width: 30px;
+        }
+       
+
+        /* Footer */
+        .footer {
+            background: #111827;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            border-bottom: 1px solid #374151;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h5 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer ul li a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .calculator-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-industry me-2"></i>Vasant Industries
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#calculator">Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1>High Performance Concrete Admixtures</h1>
+                        <p>Innovative solutions for modern concrete construction. Accelerators, water reducers, retarders, and specialty products engineered for excellence.</p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="#products" class="btn btn-primary btn-lg">Explore Products</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center mt-5 mt-lg-0">
+                        <i class="fas fa-hard-hat" style="font-size: 15rem; opacity: 0.2;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Product Range</h2>
+                <p>Comprehensive concrete admixture solutions for every construction need</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h4>Accelerators</h4>
+                        <p>Decrease setting time and increase early strength gain for cold weather concreting.</p>
+                        <ul class="product-specs">
+                            <li>ACCE-375 - Premium Grade</li>
+                            <li>ACCE-254 - Standard Grade</li>
+                            <li>ACCE-258 - Fast Setting</li>
+                            <li>ACCE-2535 - Ultra Fast</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h4>Water Reducers</h4>
+                        <p>Reduce water content while maintaining workability and increasing strength.</p>
+                        <ul class="product-specs">
+                            <li>WR-41 - High Performance</li>
+                            <li>WR-31 - Standard Grade</li>
+                            <li>WR-21 - Economic Grade</li>
+                            <li>WR-11 - Basic Grade</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <i class="fas fa-stream"></i>
+                        </div>
+                        <h4>High-Range Water Reducers</h4>
+                        <p>Polycarboxylate-based superplasticizers for flowable and self-consolidating concrete.</p>
+                        <ul class="product-specs">
+                            <li>SCC-11 - Self Consolidating</li>
+                            <li>SCC-12 - High Slump</li>
+                            <li>SCC-13 - Extended Workability</li>
+                            <li>SCC-21 - Premium Performance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Retarders</h4>
+                        <p>Delay setting time for hot weather concreting and complex pours.</p>
+                        <ul class="product-specs">
+                            <li>RT-1254 - Standard Retarder</li>
+                            <li>RT-1258 - Extended Delay</li>
+                            <li>RT-12535 - High Temperature</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Vasant Industries</h2>
+                <p>Your trusted partner in concrete construction excellence</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4>Research & Testing</h4>
+                        <p>State-of-the-art research facilities for concrete mixture design development and hardened properties testing.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Expert Support</h4>
+                        <p>Experienced field team providing technical support, evaluations, and application problem-solving.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4>Quality Assurance</h4>
+                        <p>Products manufactured under stringent quality standards ensuring consistent performance and reliability.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h4>Reliable Delivery</h4>
+                        <p>Accurate and reliable delivery systems designed to meet your changing construction needs.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4>Custom Solutions</h4>
+                        <p>Tailored concrete technology solutions for specific applications and challenging requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>24/7 Support</h4>
+                        <p>Round-the-clock technical support for urgent construction needs and project assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admixture Calculator</h2>
+                <p>Calculate the right admixture dosage for your concrete project</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="calculator-form">
+                        <form id="calculatorForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="concreteVolume" class="form-label">Concrete Volume (m³)</label>
+                                    <input type="number" class="form-control" id="concreteVolume" placeholder="Enter volume" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cementContent" class="form-label">Cement Content (kg/m³)</label>
+                                    <input type="number" class="form-control" id="cementContent" placeholder="Enter cement content" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="admixureType" class="form-label">Admixture Type</label>
+                                    <select class="form-select" id="admixureType" required>
+                                        <option value="">Select admixture type</option>
+                                        <option value="accelerator">Accelerator</option>
+                                        <option value="water-reducer">Water Reducer</option>
+                                        <option value="hrwr">High-Range Water Reducer</option>
+                                        <option value="retarder">Retarder</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="weatherCondition" class="form-label">Weather Condition</label>
+                                    <select class="form-select" id="weatherCondition" required>
+                                        <option value="">Select weather condition</option>
+                                        <option value="cold">Cold Weather (&lt;10°C)</option>
+                                        <option value="normal">Normal Weather (10-25°C)</option>
+                                        <option value="hot">Hot Weather (&gt;25°C)</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">Calculate Dosage</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <div id="calculatorResult" class="result-card">
+                            <h4><i class="fas fa-calculator me-2"></i>Calculation Results</h4>
+                            <div class="row g-3 mt-2">
+                                <div class="col-md-6">
+                                    <p><strong>Recommended Dosage:</strong></p>
+                                    <h3 id="dosageAmount">0</h3>
+                                    <p>liters per cubic meter</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Total Admixture Required:</strong></p>
+                                    <h3 id="totalAmount">0</h3>
+                                    <p>liters for entire project</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <p id="productRecommendation" class="mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-white">Contact Us</h2>
+                <p class="text-light">Get in touch for technical support and product inquiries</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <h4 class="mb-4">Get In Touch</h4>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h6>Address</h6>
+                                <p>206, Katol-Warud Road, At-Indarwada, Post-Bharsingi, Nagpur-441305, Maharashtra, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h6>Email</h6>
+                                <p>sales.vasantindustries@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h6>Phone</h6>
+                                <p>+91 942 3727 831</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h6>Business Hours</h6>
+                                <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8">
+                    <div class="contact-info">
+                        <h4 class="mb-4">Send Message</h4>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" placeholder="Phone Number">
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-select">
+                                        <option value="">Select Product Interest</option>
+                                        <option value="accelerators">Accelerators</option>
+                                        <option value="water-reducers">Water Reducers</option>
+                                        <option value="hrwr">High-Range Water Reducers</option>
+                                        <option value="retarders">Retarders</option>
+                                        <option value="specialty">Specialty Products</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <h5><i class="fas fa-industry me-2"></i>Vasant Industries</h5>
+                        <p>Leading supplier of high-performance concrete admixtures and construction solutions. Committed to innovation, quality, and customer satisfaction.</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <h5>Products</h5>
+                        <ul>
+                            <li><a href="#products">Accelerators</a></li>
+                            <li><a href="#products">Water Reducers</a></li>
+                            <li><a href="#products">HRWR</a></li>
+                            <li><a href="#products">Retarders</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <h5>Services</h5>
+                        <ul>
+                            <li><a href="#features">Technical Support</a></li>
+                            <li><a href="#features">Testing Services</a></li>
+                            <li><a href="#calculator">Calculations</a></li>
+                            <li><a href="#contact">Consultation</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <h5>Applications</h5>
+                        <ul>
+                            <li><a href="#">Ready Mix</a></li>
+                            <li><a href="#">Precast</a></li>
+                            <li><a href="#">High Performance</a></li>
+                            <li><a href="#">Specialty Concrete</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#features">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Quality Policy</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>&copy; 2024 Vasant Industries. All rights reserved. | Designed for concrete construction excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https
+://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <script>
+        document.getElementById('calculatorForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const volume = parseFloat(document.getElementById('concreteVolume').value);
+            const cement = parseFloat(document.getElementById('cementContent').value);
+            const admixtureType = document.getElementById('admixureType').value;
+            const weatherCondition = document.getElementById('weatherCondition').value;
+
+            let dosage = 0;
+            let productRecommendation = '';
+
+            if (admixtureType === 'accelerator') {
+                dosage = cement * 0.02; // Example dosage calculation
+                productRecommendation = 'Recommended Product: ACCE-375';
+            } else if (admixtureType === 'water-reducer') {
+                dosage = cement * 0.03; // Example dosage calculation
+                productRecommendation = 'Recommended Product: WR-41';
+            } else if (admixtureType === 'hrwr') {
+                dosage = cement * 0.04; // Example dosage calculation
+                productRecommendation = 'Recommended Product: SCC-11';
+            } else if (admixtureType === 'retarder') {
+                dosage = cement * 0.01; // Example dosage calculation
+                productRecommendation = 'Recommended Product: RT-1254';
+            }
+
+            const totalAmount = dosage * volume;
+
+            document.getElementById('dosageAmount').textContent = dosage.toFixed(2);
+            document.getElementById('totalAmount').textContent = totalAmount.toFixed(2);
+            document.getElementById('productRecommendation').textContent = productRecommendation;
+
+            document.getElementById('calculatorResult').style.display = 'block';
+        });
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for contacting us! We will get back to you shortly.');
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

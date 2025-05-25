@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasant Industries - Next-Gen Concrete Solutions</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #06d6a0;
+            --warning: #fbbf24;
+            --danger: #ef4444;
+            --dark: #0f0f23;
+            --darker: #020617;
+            --light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-muted: #64748b;
+            --glow: 0 0 50px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, var(--dark), var(--darker));
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(6, 214, 160, 0.2) 0%, transparent 50%);
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.6; transform: scale(1.1) rotate(2deg); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--darker);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 4px;
+        }
+
+        /* Glassmorphism Navigation */
+        .navbar {
+            background: rgba(15, 15, 35, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(15, 15, 35, 0.95);
+            padding: 0.5rem 0;
+            box-shadow: var(--glow);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-weight: 500;
+            margin: 0 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Hero Section with 3D Effects */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #fff, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from { filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.3)); }
+            to { filter: drop-shadow(0 0 40px rgba(6, 214, 160, 0.4)); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent), var(--warning));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Floating 3D Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { top: 60%; right: 15%; animation-delay: 2s; }
+        .floating-element:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* Premium Buttons */
+        .btn-premium {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-premium:hover::before {
+            left: 100%;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4);
+            color: white;
+        }
+
+        .btn-outline-premium {
+            background: transparent;
+            border: 2px solid;
+            border-image: linear-gradient(45deg, var(--primary), var(--accent)) 1;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-outline-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-outline-premium:hover::before {
+            width: 100%;
+        }
+
+        .btn-outline-premium:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(6, 214, 160, 0.3);
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+        }
+
+        /* Product Cards with Holographic Effect */
+        .product-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 2.5rem;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .product-card:hover::before {
+            left: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 1px var(--accent);
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-icon::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(255, 255, 255, 0.3) 60deg, transparent 120deg);
+            animation: iconSpin 3s linear infinite;
+        }
+
+        @keyframes iconSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .product-icon i {
+            font-size: 2rem;
+            color: white;
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Interactive Counter */
+        .counter {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent), var(--warning));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Particle System */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: particleFloat 10s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Calculator with Neon Effects */
+        .calculator-section {
+            background: linear-gradient(135deg, rgba(15, 15, 35, 0.8), rgba(2, 6, 23, 0.9));
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .calculator-form {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-control, .form-select {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(6, 214, 160, 0.3);
+            color: white;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Neon Result Card */
+        .result-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 
+                0 0 30px rgba(99, 102, 241, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.2);
+            animation: neonPulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes neonPulse {
+            from { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+            to { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
+        }
+
+        /* Contact Section with Hologram Effect */
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #06d6a0;
+            --warning: #fbbf24;
+            --danger: #ef4444;
+            --dark: #0f0f23;
+            --darker: #020617;
+            --light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-muted: #64748b;
+            --glow: 0 0 50px rgba(99, 102, 241, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Contact Section with Hologram Effect */
+        .contact-section {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            padding: 100px 0;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .contact-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .contact-header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-card {
+            background: var(--glass);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 3rem;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(6, 214, 160, 0.1) 60deg, transparent 120deg);
+            animation: hologramSpin 8s linear infinite;
+        }
+
+        @keyframes hologramSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .contact-info {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--light);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-right: 1rem;
+            width: 30px;
+        }
+
+        .contact-item div h4 {
+            font-size: 1rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item div p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--light);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(6, 214, 160, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(6, 214, 160, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--warning), #f59e0b);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Footer with Gradient */
+       .footer {
+            background: #111827;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            border-bottom: 1px solid #374151;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h5 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer ul li a:hover {
+            color: white;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+
+            .contact-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .floating-element {
+                display: none;
+            }
+            
+            .product-card {
+                margin-bottom: 2rem;
+            }
+            
+            .calculator-form {
+                padding: 2rem;
+            }
+        }
+
+        /* Custom Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .animate-slideInLeft {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        .animate-slideInRight {
+            animation: slideInRight 0.8s ease forwards;
+        }
+
+        /* Section Spacing */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(45deg, white, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-atom me-2"></i>Vasant Industries
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Innovation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#calculator">Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1>FUTURE OF CONCRETE</h1>
+                        <p class="hero-subtitle">Revolutionary admixtures engineered for next-generation construction. Where innovation meets infrastructure.</p>
+                        
+                        <div class="d-flex gap-3 flex-wrap mb-4">
+                            <a href="#products" class="btn-premium">Explore Solutions</a>
+                            <a href="#calculator" class="btn-outline-premium">Smart Calculator</a>
+                        </div>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number counter" data-target="15">0</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number counter" data-target="500">0</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number counter" data-target="50">0</div>
+                                <div class="stat-label">Product Range</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <div style="font-size: 20rem; opacity: 0.1; background: linear-gradient(45deg, var(--primary), var(--accent));  -webkit-text-fill-color: transparent;">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Advanced Solutions</h2>
+                <p>Cutting-edge concrete admixtures engineered for superior performance and durability</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card glass-card">
+                        <div class="product-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>ACCELERATORS</h4>
+                        <p>Ultra-fast setting compounds for rapid construction and cold weather applications.</p>
+                        <div class="mt-3">
+                            <small class="text-muted d-block">ACCE-375 • ACCE-254 • ACCE-258</small>
+                            <div class="progress mt-2" style="height: 4px;">
+                                <div class="progress-bar bg-gradient" style="width: 95%; background: linear-gradient(90deg, var(--primary), var(--accent));"></div>
+                            </div>
+                            <small class="text-muted">Performance: 95%</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card glass-card">
+                        <div class="product-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h4>WATER REDUCERS</h4>
+                        <p>Advanced polymers reducing water content while maintaining optimal workability.</p>
+                        <div class="mt-3">
+                            <small class="text-muted d-block">WR-41 • WR-31 • WR-21 • WR-11</small>
+                            <div class="progress mt-2" style="height: 4px;">
+                                <div class="progress-bar bg-gradient" style="width: 90%; background: linear-gradient(90deg, var(--secondary), var(--warning));"></div>
+                            </div>
+                            <small class="text-muted">Efficiency: 90%</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card glass-card">
+                        <div class="product-icon">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <h4>SUPERPLASTICIZERS</h4>
+                        <p>High-range water reducers for self-consolidating and high-performance concrete.</p>
+                        <div class="mt-3">
+                            <small class="text-muted d-block">SCC-11 • SCC-12 • SCC-21</small>
+                            <div class="progress mt-2" style="height: 4px;">
+                                <div class="progress-bar bg-gradient" style="width: 98%; background: linear-gradient(90deg, var(--accent), var(--primary));"></div>
+                            </div>
+                            <small class="text-muted">Innovation: 98%</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div
+    class="product-card glass-card">
+                            <div class="product-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>ADMIXTURES</h4>
+                            <p>Specialized additives for enhanced durability, workability, and performance.</p>
+                            <div class="mt-3">
+                                <small class="text-muted d-block">ADM-101 • ADM-202 • ADM-303</small>
+                                <div class="progress mt-2" style="height: 4px;">
+                                    <div class="progress-bar bg-gradient" style="width: 97%; background: linear-gradient(90deg, var(--primary), var(--accent));"></div>
+                                </div>
+                                <small class="text-muted">Innovation: 97%</small>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn btn-primary">Learn More</button>
+                            </div>
+
+                            <div id="calculatorResult" class="mt-4" style="display: none;">
+                                <h5>Calculator Results</h5>
+                                <p>Dosage Amount: <span id="dosageAmount"></span> kg</p>
+                                <p>Total Amount: <span id="totalAmount"></span> kg</p>
+                                <p><span id="productRecommendation"></span></p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Innovation at Work</h2>
+                <p>Discover how our advanced admixtures redefine concrete performance and sustainability.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card">
+                        <h4>High Performance</h4>
+                        <p>Engineered for superior strength, durability, and longevity in all conditions.</p>
+                        <i class="fas fa-cogs fa-3x text-primary mt-3"></i>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card">
+                        <h4>Sustainability</h4>
+                        <p>Eco-friendly formulations that reduce environmental impact without compromising quality.</p>
+                        <i class="fas fa-leaf fa-3x text-secondary mt-3"></i>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card
+">
+                        <h4>Innovation</h4>
+                        <p>Continuous research and development to bring cutting-edge solutions to the market.</p>
+                        <i class="fas fa-lightbulb fa-3x text-accent mt-3"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Smart Calculator</h2>
+                <p>Calculate the optimal dosage of our admixtures for your concrete mix.</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form id="calculatorForm" class="calculator-form glass-card">
+                        <div class="mb-4">
+                            <label for="concreteVolume" class="form-label">Concrete Volume (m³)</label>
+                            <input type="number" class="form-control" id="concreteVolume" placeholder="Enter volume in cubic meters" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="admixtureType" class="form-label">Admixture Type</label>
+                            <select class="form-select" id="admixtureType" required>
+                                <option value="" disabled selected>Select an admixture</option>
+                                <option value="accelerator">Accelerator</option>
+                                <option value="water_reducer">Water Reducer</option>
+                                <option value="superplasticizer">Superplasticizer</option>
+                                <option value="admixture">Admixture</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="dosageRate" class="form-label">Dosage Rate (kg/m³)</label>
+                            <input type="number" class="form-control" id="dosageRate" placeholder="Enter dosage rate in kg/m³" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Calculate</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+   <div class="scroll-progress"></div>
+    
+    <main class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h1>Get in Touch</h1>
+                <p>Contact us for inquiries, support, or to learn more about our products.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-card">
+                    <div class="contact-info">
+                        <h3><i class="fas fa-address-book"></i> Contact Us</h3>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>206, Katol-Warud Road, At-Indarwada, Post-Bharsingi,<br>Nagpur-441305, Maharashtra, India</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 942 3727 831</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>sales.vasantindustries@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-card">
+                    <div class="contact-form">
+                        <h3><i class="fas fa-paper-plane"></i> Send Message</h3>
+                        <form id="contactForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <input type="text" class="form-input" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-input" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <input type="tel" class="form-input" placeholder="Phone Number">
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-select" required>
+                                        <option value="">Select Product Interest</option>
+                                        <option value="accelerators">Accelerators</option>
+                                        <option value="water-reducers">Water Reducers</option>
+                                        <option value="hrwr">HRWR</option>
+                                        <option value="retarders">Retarders</option>
+                                        <option value="ready-mix">Ready Mix</option>
+                                        <option value="precast">Precast</option>
+                                        <option value="high-performance">High Performance</option>
+                                        <option value="specialty-concrete">Specialty Concrete</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <textarea class="form-input form-textarea" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <h5><i class="fas fa-industry me-2"></i>Vasant Industries</h5>
+                        <p>Leading supplier of high-performance concrete admixtures and construction solutions. Committed to innovation, quality, and customer satisfaction.</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <h5>Products</h5>
+                        <ul>
+                            <li><a href="#products">Accelerators</a></li>
+                            <li><a href="#products">Water Reducers</a></li>
+                            <li><a href="#products">HRWR</a></li>
+                            <li><a href="#products">Retarders</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <h5>Services</h5>
+                        <ul>
+                            <li><a href="#features">Technical Support</a></li>
+                            <li><a href="#features">Testing Services</a></li>
+                            <li><a href="#calculator">Calculations</a></li>
+                            <li><a href="#contact">Consultation</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <h5>Applications</h5>
+                        <ul>
+                            <li><a href="#">Ready Mix</a></li>
+                            <li><a href="#">Precast</a></li>
+                            <li><a href="#">High Performance</a></li>
+                            <li><a href="#">Specialty Concrete</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#features">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Quality Policy</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>&copy; 2024 Vasant Industries. All rights reserved. | Designed for concrete construction excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('.scroll-progress').style.width = scrolled + '%';
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+            submitBtn.style.background = 'linear-gradient(135deg, var(--accent), #059669)';
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = 'linear-gradient(135deg, var(--warning), #f59e0b)';
+                this.reset();
+            }, 3000);
+        });
+
+        // Smooth scroll for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+ 
+
+       $(document).ready(function() {
+    // Smooth scrolling for navigation links
+    $('a[href^="#"]').on('click', function(event) {
+        event.preventDefault();
+        var target = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 800);
+    });
+});
+
+// Scroll Progress Bar
+$(window).on('scroll', function() {
+    var scrollTop = $(this).scrollTop();
+    var docHeight = $(document).height() - $(window).height();
+    var scrollPercent = (scrollTop / docHeight) * 100;
+    $('#scrollProgress').css('width', scrollPercent + '%');
+});
+
+
+// Counter Animation
+$('.counter').each(function() {
+    var $this = $(this);
+    var countTo = $this.data('target');
+    $({ countNum: $this.text() }).animate({ countNum: countTo }, {
+        duration: 2000,
+        easing: 'swing',
+        step: function() {
+            $this.text(Math.floor(this.countNum));
+        },
+        complete: function() {
+            $this.text(this.countNum);
+        }
+    });
+});
+
+// Calculator Form Submission
+$('#calculatorForm').on('submit', function(event) {
+    event.preventDefault();
+    var volume = parseFloat($('#concreteVolume').val());
+    var dosageRate = parseFloat($('#dosageRate').val());
+    var admixtureType = $('#admixtureType').val();
+
+    if (isNaN(volume) || isNaN(dosageRate) || !admixtureType) {
+        alert('Please fill in all fields correctly.');
+        return;
+    }
+
+    var dosageAmount = volume * dosageRate;
+    var totalAmount = dosageAmount + (dosageAmount * 0.05); // Adding 5% for wastage
+
+    $('#dosageAmount').text(dosageAmount.toFixed(2));
+    $('#totalAmount').text(totalAmount.toFixed(2));
+
+    var productRecommendation;
+    switch (admixtureType) {
+        case 'accelerator':
+            productRecommendation = 'Recommended Product: ACCE-375';
+            break;
+        case 'water_reducer':
+            productRecommendation = 'Recommended Product: WR-41';
+            break;
+        case 'superplasticizer':
+            productRecommendation = 'Recommended Product: SCC-11';
+            break;
+        case 'admixture':
+            productRecommendation = 'Recommended Product: ADM-101';
+            break;
+        default:
+            productRecommendation = '';
+    }
+    
+    // Display product recommendation (assuming there's an element to show it)
+    $('#productRecommendation').text(productRecommendation);
+});
+
+// Particle System
+function createParticle() {
+    var particle = $('<div class="particle"></div>');
+    $('body').append(particle);
+    var x = Math.random() * $(window).width();
+    var y = Math.random() * $(window).height();
+    particle.css({
+        left: x + 'px',
+        top: y + 'px',
+        animationDelay: Math.random() * 5 + 's'
+    });
+    setTimeout(function() {
+        particle.remove();
+    }, 10000);
+}
+
+setInterval(createParticle, 200);
+$(document).ready(function() {
+    // Create initial particles
+    for (var i = 0; i < 50; i++) {
+        createParticle();
+    }
+});
+
+// Floating Elements Animation
+function createFloatingElement() {
+    var element = $('<div class="floating-element"></div>');
+    $('body').append(element);
+    var size = Math.random() * 50 + 20; // Random size between 20px and 70px
+    element.css({
+        width: size + 'px',
+        height: size + 'px',
+        left: Math.random() * $(window).width() + 'px',
+        top: Math.random() * $(window).height() + 'px',
+        animationDuration: (Math.random() * 5 + 5) + 's' // Random duration between 5s and 10s
+    });
+    setTimeout(function() {
+        element.remove();
+    }, 10000);
+}
+
+setInterval(createFloatingElement, 3000);
+$(document).ready(function() {
+    // Create initial floating elements
+    for (var i = 0; i < 10; i++) {
+        createFloatingElement();
+    }
+});
+</script>
+</body>
+</html>
+
+
+ <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>  -->
